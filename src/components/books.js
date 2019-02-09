@@ -6,7 +6,6 @@ import Shelf from './shelf';
 
 
 class Books extends React.Component{
-
   
    
 
@@ -34,12 +33,10 @@ class Books extends React.Component{
 
           // For the className="book-cover" and "className="book-authors", I utilized code from Ryan Waite's FEND Project 6 Walk Through
         );
-
-
     }
-
-
 }
+
+
 
 
 export default Books
