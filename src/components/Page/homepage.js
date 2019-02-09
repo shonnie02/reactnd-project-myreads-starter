@@ -4,6 +4,9 @@ import * as BooksAPI from '../../BooksAPI';
 import Shelf from '../shelf';
 
 
+
+
+
 class HomePage extends React.Component{
 
     constructor(props){
@@ -12,8 +15,7 @@ class HomePage extends React.Component{
         books: []
      }
 
-    }
-    
+    }    
    
   
  componentDidMount() {
@@ -21,9 +23,7 @@ class HomePage extends React.Component{
           this.setState({books: resp});
           
           console.log(resp);
-      });
-
-      
+      });      
     }
 
     updateBook = (book, shelf) => 
@@ -33,7 +33,7 @@ class HomePage extends React.Component{
         books: state.books.filter(b => b.id !== book.id).concat([book])
       }));
     });
-  
+
 
     render() {
 
@@ -46,23 +46,19 @@ class HomePage extends React.Component{
               <Shelf updateBook={this.updateBook} name='Currently Reading' books={this.state.books.filter( b => b.shelf === "currentlyReading")} />
               <Shelf updateBook={this.updateBook} name='Want To Read' books={this.state.books.filter( b => b.shelf === "wantToRead")} />
               <Shelf updateBook={this.updateBook} name='Read' books={this.state.books.filter( b => b.shelf === "read")} /> 
-            
             </div>
             <div className="open-search">
               <Link to="/search">Add a book</Link>
             </div>
-          </div>
-        
+          </div>        
       
-        );
-    
-  
-
-        
+        );          
     }
-
-
 }
+
+
+
+
 
 
 export default HomePage
