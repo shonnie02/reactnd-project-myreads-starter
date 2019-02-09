@@ -17,16 +17,16 @@ class Shelf extends React.Component{
                 }
               </ol>
             </div>
-          </div>
-       
+          </div>       
          
-
         );
-
     }
-
-
 }
+
+
+
+
+
 
 
 export default Shelf
