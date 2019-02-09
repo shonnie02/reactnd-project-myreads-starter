@@ -4,6 +4,9 @@ import * as BooksAPI from '../../BooksAPI';
 import Books from '../books';
 
 
+
+
+
 class SearchPage extends React.Component{
     
  constructor(props){
@@ -15,7 +18,6 @@ class SearchPage extends React.Component{
    }
 
   }
-  
    
 
 
@@ -24,14 +26,12 @@ class SearchPage extends React.Component{
         this.setState({books: response});
         
         console.log(response);
-    });
-    
+    });    
   }
   
   updateQuery = (query) => { //Utilized concepts from Udacity Classroom
 
     this.setState({query:query}, this.submitSearch);
-
   }
 
   updateBook = (book, shelf) => //Utilized Method from Ryan Waite's Walkthrouh
@@ -43,7 +43,7 @@ class SearchPage extends React.Component{
     });
 
 
-    submitSearch() { //Utilzed Method from Ryan Waite's Walkthrough
+  submitSearch() { //Utilzed Method from Ryan Waite's Walkthrough
       if(this.state.query === '' || this.state.query === undefined) {
          return this.setState({ results: [] })
       }
@@ -76,24 +76,19 @@ class SearchPage extends React.Component{
                   value={this.state.query}
                   onChange={(event) => this.updateQuery(event.target.value)}
                   />
-  
-                </div>
-              </div>
+                  </div>
+               </div>
             <div className="search-books-results">
               <ol className="books-grid">
-                
-          
+              
               {this.state.results.map((book, key) => <Books updateBook={this.updateBook} book={book} key={key} />)}
             
             </ol>
             </div>
             </div>
         </div>
-        );
-       
+        );       
     }
-
-
 }
 
 /* NOTES: The search from BooksAPI is limited to a particular set of search terms.
