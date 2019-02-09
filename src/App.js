@@ -9,8 +9,6 @@ import './index.css'
 
 
 class BooksApp extends React.Component {
-
-
   
 
     render(){
@@ -21,11 +19,7 @@ class BooksApp extends React.Component {
             </div>
 
       );
-
     }
-
-
-
 } 
 
 
